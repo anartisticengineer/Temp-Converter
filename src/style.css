@@ -1,7 +1,8 @@
 html, body {
   margin: 0;
   padding: 0;
-  font-family:Tahoma;
+  background-color: #FFFFFF;
+  font-family: Tahoma;
 }
 
 canvas {
@@ -17,13 +18,36 @@ input {
 	height: 50px;
 	padding: 20px;
 	text-align : center;
-}
-button{
-	left: 50%;
-	text-align : center;
+  justify-content: center;
 }
 
-#instruct{
-	/*Instruction Section*/
+button{
+	left: 50%;
+  justify-content: center;
 	text-align : center;
 }
+.instruct{
+	/*Instruction Section*/
+  background: #1F1F1F;
+  color: #EEE;
+  grid-area: header;
+	text-align : center;
+}
+.mainsketch{
+  grid-area: content;
+  justify-self: center;
+  align-self: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 10% auto 20%;
+  grid-template-areas: "header header header"
+                        ". content ."
+                        "footer footer footer";
+}
+#interact{grid-area: footer;}
+#temp_c{grid-area: footer;}
+#temp_f{grid-area: footer;}
+#temp_k{grid-area: footer;}

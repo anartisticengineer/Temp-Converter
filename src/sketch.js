@@ -15,26 +15,22 @@ function setup(){
 	textAlign(CENTER);
 	//input temp in fahrenheit, celsius or kelvin
 	tempIn = createInput('');
-	
+
 	tempIn.id('temp_in');
 
 	//tempIn.position(0,0);
 	var c_btn = createButton('From Celsius');
 	var f_btn = createButton('From Fahrenheit');
 	var k_btn = createButton('From Kelvin');
-	
+
 	c_btn.mousePressed(setTemp);
 	f_btn.mousePressed(setTemp);
 	k_btn.mousePressed(setTemp);
-  
+
 	c_btn.id('temp_c');
 	f_btn.id('temp_f');
 	k_btn.id('temp_k');
-	
-	c_btn.position(0,25);
-	f_btn.position(0,50);
-	k_btn.position(0,75);
-	
+
 	tempConv = new TempConverter();
 	thermometer = new Thermometer();
 }
@@ -51,7 +47,7 @@ function setTemp(){
 		//val = tempIn.value(); *used for initial testing
     console.log(this.id());
 	}
-	
+
 	switch(this.id()){
 		case 'temp_c':
 		tempConv.setFromCelcius(val);
